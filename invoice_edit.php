@@ -40,6 +40,9 @@ class Invoice extends Dbh {
         $invoiceCount = $conn->rowCount();
 
         if (!$invoiceCount > 0) {
+            $delete = $this->connect()->prepare("DELETE FROM invoice WHERE customer_name = ? AND medicine_name = ? AND users_id = ?");
+            $delete->execute(array($this->customer_name, $this->medicine_name, $this->users_id));
+
             $stmt = $this->connect()->prepare("INSERT INTO invoice(customer_name, medicine_name, price_per_unit, quantity, users_id) VALUES
             (?,?,?,?,?)");
             if (!$stmt->execute(array($this->customer_name, $this->medicine_name, $this->price_per_unit, $this->quantity, $this->users_id))) {
@@ -82,6 +85,24 @@ if(isset($_POST["submit"])) {
     $invoice = new Invoice($customerName, $medicineName, $pricePerUnit, $quantity, $users_id);
     $invoice->submit();
 }
+
+$dbh = new Dbh();
+$result = $dbh->connect()->prepare("SELECT * FROM invoice WHERE invoice_id = ? AND users_id = ?");
+$result->execute(array($_SESSION["invoice"], $_SESSION["users_id"]));
+$row = $result->fetch();
+
+$customerName = explode(" ",$_SESSION["customer_name"]);
+$firstname = $customerName[0];
+$lastname = $customerName[count($customerName) - 1];
+$customer = $dbh->connect()->prepare("SELECT * FROM customer WHERE firstname = ? AND lastname = ? AND users_id = ?");
+$customer->execute(array($firstname, $lastname, $_SESSION["users_id"]));
+$customerCount = $customer->rowCount();
+$customerData = $customer->fetch();
+
+$medicine = $dbh->connect()->prepare("SELECT * FROM medicine WHERE medicine_name = ? AND users_id = ?");
+$medicine->execute(array($_SESSION["medicine_name"], $_SESSION["users_id"]));
+$medicineCount = $medicine->rowCount();
+$medicineData = $medicine->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +139,7 @@ if(isset($_POST["submit"])) {
                 </div>
                 <p>Medicine</p>
             </a>
-            <a href="invoice_list.php" class="invoice active">
+            <a href="invoice_dashboard.php" class="invoice active">
                 <div class="image-container">
                     <img src="images/invoice_green.svg" alt="invoice">
                 </div>
@@ -138,17 +159,17 @@ if(isset($_POST["submit"])) {
             <form action="#" method="post">
                 <div class="customer-form">
                     <label for="customerName">Customer</label>
-                    <input type="text" placeholder="Customer Name" id="customerName" name="customerName" required>
+                    <input type="text" placeholder="Customer Name" id="customerName" name="customerName" required value="<?php echo htmlspecialchars($row["customer_name"])?>">
                 </div>
                 <div class="medicine-form">
                     <label for="name">Medicine</label>
-                    <input type="text" placeholder="Medicine Name" id="medicineName" name="medicineName" required>
+                    <input type="text" placeholder="Medicine Name" id="medicineName" name="medicineName" required value="<?php echo htmlspecialchars($row["medicine_name"])?>">
                 </div>
                 <div class="amount-form">
                     <label for="name">Amount</label>
                     <div class="amount-input">
-                        <input type="text" placeholder="Price per unit" id="pricePerUnit" name="pricePerUnit" required>
-                        <input type="text" placeholder="Quantity" id="quantity" name="quantity" required>
+                        <input type="text" placeholder="Price per unit" id="pricePerUnit" name="pricePerUnit" required value="<?php echo htmlspecialchars($row["price_per_unit"])?>">
+                        <input type="text" placeholder="Quantity" id="quantity" name="quantity" required value="<?php echo htmlspecialchars($row["quantity"])?>">
                     </div>
                 </div>
                 <div class="button-container">
@@ -167,10 +188,10 @@ if(isset($_POST["submit"])) {
                     <p>Email</p>
                 </div>
                 <div class="right">
-                    <p class="name">N/A</p>
-                    <p>N/A</p>
-                    <p>N/A</p>
-                    <p>N/A</p>
+                    <p class="name"><?php echo $_SESSION["customer_name"] ?></p>
+                    <p><?php echo $customerData["municipality"] . ", " . $customerData["district"]?></p>
+                    <p><?php echo "(+977)-" . $customerData["phone"]?></p>
+                    <p><?php echo $customerData["email"]?></p>
                 </div>
             </div>
             <div class="medicine">
@@ -180,9 +201,9 @@ if(isset($_POST["submit"])) {
                     <p>Expiry Date</p>
                 </div>
                 <div class="right">
-                    <p>N/A</p>
-                    <p>N/A</p>
-                    <p>N/A</p>
+                    <p><?php echo $medicineData["medicine_name"]?></p>
+                    <p><?php echo  $medicineData["medicine_type"]?></p>
+                    <p><?php echo $medicineData["year"] . "-" . $medicineData["month"] . "-" . $medicineData["date"]?></p>
                 </div>
             </div>
         </div>
@@ -280,4 +301,4 @@ if(isset($_POST["submit"])) {
 
 </body>
 
-</html>
+</html> 

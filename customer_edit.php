@@ -7,6 +7,11 @@ if(!isSet($_SESSION["users_id"])) {
     exit();
 }
 
+if(isSet($_POST["logout"])) {
+    session_unset();
+    echo "<script>window.location = 'login.php'</script>";
+}
+
 include "classes/dbh.classes.php";
 
 $dbh = new Dbh();
@@ -139,7 +144,7 @@ $username = $result->fetch();
 </head>
 <body>
     <!-- Dashboard -->
-<div class="dashboard">
+<form class="dashboard" action="#" method="post">
         <div class="dashboard-menus">
             <h3>DASHBOARD</h3>
             <a href="home_dashboard.php" class="home">
@@ -167,11 +172,11 @@ $username = $result->fetch();
                 <p>Invoice</p>
             </a>
         </div>
-        <div class="dashboard-account">
+        <button name="logout" class="dashboard-account">
             <img src="images/user.svg" alt="user">
             <?php echo "<p>".htmlspecialchars($username['username'])."</p>"?>
-        </div>
-    </div>
+        </button>
+    </form>
 
     <!-- Content -->
     <div class="content">
@@ -209,6 +214,29 @@ $username = $result->fetch();
            </div>
         </form>
     </div>
+
+    <script>
+        // Logout
+        const accountDiv = document.querySelector(".dashboard-account");
+        const accountImage = document.querySelector(".dashboard-account img");
+        const accountName = document.querySelector(".dashboard-account p");
+        const originalName = accountName.textContent;
+
+        function hovered() {
+            accountImage.src = "images/logout_icon.svg";
+            accountName.textContent = "logout";
+            accountName.style.color = "#FF2E2E"
+        }
+
+        function unhovered() {
+            accountImage.src = "images/user.svg";
+            accountName.textContent = originalName;
+            accountName.style.color = "var(--text-dark)";
+        }
+
+        accountDiv.addEventListener("mouseover", hovered);
+        accountDiv.addEventListener("mouseout", unhovered);
+    </script>
 </body>
 
 

@@ -1,0 +1,98 @@
+Date : 2022-05-04 10:14:50
+Directory : c:\xampp\htdocs\Pharmacy Website Design
+Total : 65 files,  3820 codes, 44 comments, 585 blanks, all 4449 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |          9 |      1,865 |         34 |        362 |      2,261 |
+| PHP        |         19 |      1,626 |         10 |        186 |      1,822 |
+| XML        |         34 |        327 |          0 |         34 |        361 |
+| Log        |          1 |          2 |          0 |          1 |          3 |
+| JavaScript |          2 |          0 |          0 |          2 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                          | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                             |         65 |      3,820 |         44 |        585 |      4,449 |
+| classes                                                                       |          5 |        178 |          6 |         48 |        232 |
+| css                                                                           |          9 |      1,865 |         34 |        362 |      2,261 |
+| images                                                                        |         35 |        329 |          0 |         35 |        364 |
+| includes                                                                      |          2 |         13 |          4 |          7 |         24 |
+| js                                                                            |          2 |          0 |          0 |          2 |          2 |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                      | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\xampp\htdocs\Pharmacy Website Design\autocomplete.php                      | PHP        |         11 |          0 |          5 |         16 |
+| c:\xampp\htdocs\Pharmacy Website Design\classes\dbh.classes.php               | PHP        |         16 |          0 |          3 |         19 |
+| c:\xampp\htdocs\Pharmacy Website Design\classes\login-controller.classes.php  | PHP        |         24 |          1 |          7 |         32 |
+| c:\xampp\htdocs\Pharmacy Website Design\classes\login.classes.php             | PHP        |         41 |          0 |         12 |         53 |
+| c:\xampp\htdocs\Pharmacy Website Design\classes\signup-controller.classes.php | PHP        |         72 |          5 |         15 |         92 |
+| c:\xampp\htdocs\Pharmacy Website Design\classes\signup.classes.php            | PHP        |         25 |          0 |         11 |         36 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\customer_dashboard.css            | CSS        |        208 |          4 |         41 |        253 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\customer_list.css                 | CSS        |        238 |          3 |         43 |        284 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\home_dashboard.css                | CSS        |        216 |          3 |         37 |        256 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\invoice_dashboard.css             | CSS        |        234 |          4 |         51 |        289 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\login.css                         | CSS        |        115 |          2 |         23 |        140 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\medicine_dashboard.css            | CSS        |        176 |          3 |         34 |        213 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\medicine_list.css                 | CSS        |        257 |          5 |         49 |        311 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\sign_up.css                       | CSS        |        119 |          3 |         24 |        146 |
+| c:\xampp\htdocs\Pharmacy Website Design\css\style.css                         | CSS        |        302 |          7 |         60 |        369 |
+| c:\xampp\htdocs\Pharmacy Website Design\customer_dashboard.php                | PHP        |        183 |          0 |         15 |        198 |
+| c:\xampp\htdocs\Pharmacy Website Design\customer_edit.php                     | PHP        |        190 |          0 |         21 |        211 |
+| c:\xampp\htdocs\Pharmacy Website Design\customer_list.php                     | PHP        |        151 |          0 |         14 |        165 |
+| c:\xampp\htdocs\Pharmacy Website Design\home_dashboard.php                    | PHP        |        118 |          0 |          8 |        126 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\Cart.svg                       | XML        |          5 |          0 |          1 |          6 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\View full reports.svg          | XML        |          3 |          0 |          1 |          4 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\background shape.svg           | XML        |          3 |          0 |          1 |          4 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\background.svg                 | XML        |         12 |          0 |          1 |         13 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\big_customer.svg               | XML        |          4 |          0 |          1 |          5 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\big_invoice.svg                | XML        |          5 |          0 |          1 |          6 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\big_medicine.svg               | XML        |         12 |          0 |          1 |         13 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\big_report.svg                 | XML        |         10 |          0 |          1 |         11 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\customer.svg                   | XML        |          6 |          0 |          1 |          7 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\customer_green.svg             | XML        |          6 |          0 |          1 |          7 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\daily_customer.svg             | XML        |          9 |          0 |          1 |         10 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\daily_profit.svg               | XML        |         12 |          0 |          1 |         13 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\daily_sales.svg                | XML        |         10 |          0 |          1 |         11 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\daily_stock.svg                | XML        |          8 |          0 |          1 |          9 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\debug.log                      | Log        |          2 |          0 |          1 |          3 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\delete icon.svg                | XML        |         17 |          0 |          1 |         18 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\edit icon.svg                  | XML        |          8 |          0 |          1 |          9 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\home.svg                       | XML        |          6 |          0 |          1 |          7 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\home_green.svg                 | XML        |          6 |          0 |          1 |          7 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\invoice.svg                    | XML        |          5 |          0 |          1 |          6 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\invoice_green.svg              | XML        |          5 |          0 |          1 |          6 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\login bag.svg                  | XML        |          3 |          0 |          1 |          4 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\login sanitizer.svg            | XML        |          3 |          0 |          1 |          4 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\medicine_green.svg             | XML        |          6 |          0 |          1 |          7 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\orders_icon.svg                | XML        |         18 |          0 |          1 |         19 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\orders_icon_light.svg          | XML        |         18 |          0 |          1 |         19 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\products_icon.svg              | XML        |         23 |          0 |          1 |         24 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\products_icon_light.svg        | XML        |         23 |          0 |          1 |         24 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\profit.svg                     | XML        |         11 |          0 |          1 |         12 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\report.svg                     | XML        |         10 |          0 |          1 |         11 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\reports_icon.svg               | XML        |         13 |          0 |          1 |         14 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\reports_icon_light.svg         | XML        |         13 |          0 |          1 |         14 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\tablet.svg                     | XML        |          6 |          0 |          1 |          7 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\tablet_pills.svg               | XML        |         12 |          0 |          1 |         13 |
+| c:\xampp\htdocs\Pharmacy Website Design\images\user.svg                       | XML        |         16 |          0 |          1 |         17 |
+| c:\xampp\htdocs\Pharmacy Website Design\includes\login.inc.php                | PHP        |          0 |          0 |          1 |          1 |
+| c:\xampp\htdocs\Pharmacy Website Design\includes\signup.inc.php               | PHP        |         13 |          4 |          6 |         23 |
+| c:\xampp\htdocs\Pharmacy Website Design\index.php                             | PHP        |         83 |          0 |          9 |         92 |
+| c:\xampp\htdocs\Pharmacy Website Design\invoice_dashboard.php                 | PHP        |        125 |          0 |          8 |        133 |
+| c:\xampp\htdocs\Pharmacy Website Design\js\main.js                            | JavaScript |          0 |          0 |          1 |          1 |
+| c:\xampp\htdocs\Pharmacy Website Design\js\sign_up.js                         | JavaScript |          0 |          0 |          1 |          1 |
+| c:\xampp\htdocs\Pharmacy Website Design\login.php                             | PHP        |         31 |          0 |          5 |         36 |
+| c:\xampp\htdocs\Pharmacy Website Design\medicine_dashboard.php                | PHP        |        173 |          0 |         12 |        185 |
+| c:\xampp\htdocs\Pharmacy Website Design\medicine_edit.php                     | PHP        |        182 |          0 |         16 |        198 |
+| c:\xampp\htdocs\Pharmacy Website Design\medicine_list.php                     | PHP        |        153 |          0 |         13 |        166 |
+| c:\xampp\htdocs\Pharmacy Website Design\sign_up.php                           | PHP        |         35 |          0 |          5 |         40 |
+| Total                                                                         |            |      3,820 |         44 |        585 |      4,449 |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

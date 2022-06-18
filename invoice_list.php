@@ -15,13 +15,13 @@ if(isSet($_POST["logout"])) {
 include "classes/dbh.classes.php";
 
 if(isset($_POST["btn-edit"])) {
-    echo "<script>window.location.href = 'medicine_edit.php'</script>";
-    $_SESSION["old"] = $_POST["old"];
+    echo "<script>window.location.href = 'invoice_edit.php'</script>";
+    $_SESSION["invoice"] = $_POST["invoice"];
 }
 
 if(isset($_POST["btn-delete"])) {
     $dbh = new Dbh();
-    $delete = $dbh->connect()->prepare("DELETE FROM medicine WHERE medicine_name = ? AND users_id = ?");
+    $delete = $dbh->connect()->prepare("DELETE FROM invoice WHERE invoice_id = ? AND users_id = ?");
     $search =  $_POST["delete"];
     $delete->execute(array($search,$_SESSION["users_id"]));
     echo "<script>window.location.href = '#'</script>";
@@ -30,9 +30,8 @@ if(isset($_POST["btn-delete"])) {
 
 
 $dbh = new Dbh();
-$res = $dbh->connect()->prepare("SELECT medicine_name, medicine_type, year, month, date, marked_price, cost_price, quantity FROM medicine WHERE users_id = ?");
+$res = $dbh->connect()->prepare("SELECT * FROM invoice WHERE users_id = ?");
 $res->execute(array($_SESSION["users_id"]));
-echo "<br>";
 $row = $res->fetchAll();
 $result = $dbh->connect()->prepare("SELECT username FROM users WHERE users_id = ?");
 $result->execute(array($_SESSION["users_id"]));
@@ -47,8 +46,8 @@ $username = $result->fetch();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/medicine_list.css">
-    <title>Medicine</title>
+    <link rel="stylesheet" href="css/invoice_list.css">
+    <title>Invoice</title>
 </head>
 
 <body>
@@ -68,15 +67,15 @@ $username = $result->fetch();
                 </div>
                 <p>Customer</p>
             </a>
-            <a href="medicine_list.php" class="medicine active">
+            <a href="medicine_list.php" class="medicine">
                 <div class="image-container">
-                    <img src="images/medicine_green.svg" alt="medicine">
+                    <img src="images/tablet.svg" alt="medicine">
                 </div>
                 <p>Medicine</p>
             </a>
-            <a href="invoice_list.php" class="invoice">
+            <a href="invoice_list.php" class="invoice active">
                 <div class="image-container">
-                    <img src="images/invoice.svg" alt="invoice">
+                    <img src="images/invoice_green.svg" alt="invoice">
                 </div>
                 <p>Invoice</p>
             </a>
@@ -93,45 +92,49 @@ $username = $result->fetch();
         <header>
                 <div class="left-header">
                 <form class="search-container">
-                        <input type="text" name="search" placeholder="Medicine name" class="searchbar">
+                        <input type="text" name="search" placeholder="Customer Name" class="searchbar">
                         <input type="submit" name="btn-search" class="btn-search" value="Search">
                 </form>
                 <ul class="suggestions"></ul>
                 </div>
                 <div class="right-header">
                    
-                    <a href="medicine_dashboard.php">Add New Medicine</a>
+                    <a href="invoice_dashboard.php">Add New Invoice</a>
                 </div>
             </header>
-            <div class="medicine-list">
+            <div class="invoice-list">
                 <div id="title">
                     <div class="text">
+                        <p>Customer Name</p>
                         <p>Medicine Name</p>
-                        <p>Type</p>
-                        <p>Marked Price</p>
-                        <p>Cost Price</p>
-                        <p>Expiry Date</p>
+                        <p>Price Per Unit</p>
                         <p>Quantity</p>
+                        <p>Date Added</p>
+                        <p>Invoice ID</p>
                     </div>
                 </div>
                 <?php 
                 forEach($row as $i) {
+                    $_SESSION["customer_name"] = $i['customer_name'];
+                    $_SESSION["medicine_name"] = $i["medicine_name"];
+                    $yearMonthDay = explode(" ", $i['date_added']);
                     echo "<div class='row'>";
                     echo "<div class='text'>";
+                        echo "<p class='customer_name'>".htmlspecialchars($i['customer_name'])."</p>";
                         echo "<p class='medicine_name'>".htmlspecialchars($i['medicine_name'])."</p>";
-                        echo "<p class='type'>".htmlspecialchars($i['medicine_type'])."</p>";
-                        echo "<p class='marked_price'>Rs ".htmlspecialchars($i['marked_price'])."</p>";
-                        echo "<p class='cost_price'>Rs ".htmlspecialchars($i['cost_price'])."</p>";
-                        echo "<p class='expiry'>".htmlspecialchars($i['year'])."-".htmlspecialchars($i['month'])."-".htmlspecialchars($i['date'])."</p>";
-                        echo "<p class='quantity'>".htmlspecialchars($i['quantity'])."</p>";
+                        echo "<p class='price_per_unit'>Rs ".htmlspecialchars($i['price_per_unit'])."</p>";
+                        echo "<p class='quantity'>Rs ".htmlspecialchars($i['quantity'])."</p>";
+                        
+                        echo "<p class='date_added'>".$yearMonthDay[0]."</p>";
+                        echo "<p class='invoice_id'>".htmlspecialchars($i['invoice_id'])."</p>";
                     echo "</div>";
                     echo "<div class='buttons'>";
                     echo "<form action='#' method='post'>";
                             echo "<button name='btn-edit'><img src='images/edit icon.svg' alt='edit' class='btn-edit'></button>";
-                            echo "<input type='hidden' value=".$i['medicine_name']." name='old'>";
+                            echo "<input type='hidden' value=".$i['invoice_id']." name='invoice'>";
                             echo "</form>";
                         echo "<form action='#' method='post'>";
-                        echo "<input type='hidden' value=".$i['medicine_name']." name='delete'>";
+                        echo "<input type='hidden' value=".$i['invoice_id']." name='delete'>";
                         echo "<button name='btn-delete'><img src='images/delete icon.svg' title='Delete' alt='edit' class='btn-delete'></button>";
                         echo "</form>";
                     echo "</div>";

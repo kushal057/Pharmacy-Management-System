@@ -29,8 +29,7 @@ a {
 }
 
 button {
-    text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
     border: none;
     padding: 0.85em 2em;
@@ -43,6 +42,15 @@ button {
 button:hover {
     background: #2e4450a5;
     cursor: pointer;
+}
+
+button[name=logout] {
+    background: none;
+    color: var(--text-dark);
+}
+
+button[name=logout]:hover {
+    background: none;
 }
 
 
@@ -125,16 +133,28 @@ button:hover {
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    width: 92%;
-    height: 20%;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    outline: none;
+    position: relative;
+    left: 5.5rem;
+    margin-top: 3rem;
+    background: none;
+}
+
+.dashboard-account:hover {
+    cursor: pointer;
+    left: 6rem;
 }
 
 .dashboard-account img {
-    height: 30%;
+    height: 3rem;
     margin-bottom: 0.2em;
 }
 
 .dashboard-account p {
+    font-size: 1rem;
     font-weight: 600;
 }
 

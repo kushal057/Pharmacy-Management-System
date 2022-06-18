@@ -83,10 +83,6 @@ button:hover {
     height: 1.5em;
 }
 
-.dashboard-menus .medicine img {
-    transform: rotate(40deg);
-}
-
 .dashboard-menus a p {
     width: 40%;
     margin-left: 1em;
@@ -124,6 +120,10 @@ button:hover {
     left: 7.5rem;
 }
 
+.dashboard-menus #medicine img {
+    transform: rotate(40deg);
+}
+
 .dashboard-account img {
     height: 3rem;
     margin-bottom: 0.2em;
@@ -152,7 +152,7 @@ button:hover {
     align-items: center;
 }
 
-.content .customer-list {
+.content .invoice-list {
     width: 82%;
 }
 
@@ -243,8 +243,8 @@ header .right-header a{
     text-decoration: none;
 }
 
-.customer-list #title,
-.customer-list .row {
+.invoice-list #title,
+.invoice-list .row {
     width: 100%;
     display: flex;
     font-size: 0.9em;
@@ -257,7 +257,7 @@ header .right-header a{
     font-size: 1em;
 }
 
-.customer-list .row {
+.invoice-list .row {
     background: none;
     border-radius: 0;
     border-bottom: 0.1px solid lightgray;
@@ -266,29 +266,61 @@ header .right-header a{
 }
 
 
-.customer-list #title .text,
-.customer-list .row .text {
+.invoice-list #title .text,
+.invoice-list .row .text {
     display: flex;
+    width: 90%;
     padding: 1.1em 0;
-}
-
-.customer-list p {
-    width: 12em;
     text-align: left;
 }
 
-.customer-list .buttons {
-    display: flex;
-    align-items: center;
-    margin-top: 0.4em;
+.invoice-list p {
+   /* background: blue;
+   border:2px solid #2E4450; */
+   width: 9em;
+   text-align: left;
 }
 
-.customer-list button {
+.invoice-list p:first-child {
+    flex: 1.2;
+}
+
+.invoice-list p:nth-child(2) {
+    flex: 1.2;
+}
+
+.invoice-list p:nth-child(3),
+.invoice-list p:nth-child(5) {
+    flex: 1;
+    text-align: left;
+}
+
+.invoice-list p:nth-child(5) {
+    text-align: center;
+}
+
+.invoice-list p:nth-child(4) {
+    flex: 0.6;
+}
+
+
+.invoice-list p:last-child {
+    flex: 0.6;
+    text-align: center;
+}
+
+.invoice-list .buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 0.2em;
+}
+
+.invoice-list button {
     background: none;
     border: none;
 }
 
-.customer-list img {
+.invoice-list img {
     margin-left: 0.6em;
     width: 2.1em;
     display: block;
