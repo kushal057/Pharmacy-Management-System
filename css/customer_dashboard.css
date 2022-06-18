@@ -1,0 +1,257 @@
+/* Utilities */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --bg-dark: rgb(136, 222, 226);
+    --bg-light: rgb(230, 252, 251);
+    --bg-input: #d3e7e8;
+    --text-dark: #2E4450;
+    --text-light: rgba(46, 68, 80, 0.77);
+    font-family: "Poppins", sans-serif;
+    font-size: calc(0.5vw + 0.5em);
+}
+ 
+body {
+    width: 100%;
+    height: 100vmin;
+    display: flex;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    padding: 0.85em 2em;
+    color: white;
+    background: #2E4450;
+    border-radius: 1.5em;
+    border: 2px solid transparent;
+}
+
+button:hover {
+    background: #2e4450a5;
+    cursor: pointer;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    width: 20%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.dashboard-menus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.dashboard-menus h3 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    text-transform: capitalize;
+    flex: 2.7;
+    text-align: left;
+    padding-left: 5.2vw;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.dashboard-menus a {
+    width: 100%;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: flex-start;
+    font-size: 1rem;
+    flex: 2.5;
+    padding-left: 5.2vw;
+}
+
+.dashboard-menus a .image-container {
+    width: 10%;
+}
+
+.dashboard-menus a img {
+    width: 100%;
+    height: 1.5em;
+}
+
+.dashboard-menus .medicine img {
+    transform: rotate(40deg);
+}
+
+.dashboard-menus a p {
+    width: 40%;
+    margin-left: 1em;
+    font-weight: 500;
+}
+
+.dashboard-menus .active {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1;
+    background: var(--text-dark);
+}
+
+.dashboard-menus .active p {
+    color: var(--bg-light);
+}
+
+.dashboard-account {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 92%;
+    height: 20%;
+}
+
+.dashboard-account img {
+    height: 30%;
+    margin-bottom: 0.2em;
+}
+
+.dashboard-account p {
+    font-weight: 600;
+}
+
+/* Content */
+
+.content {
+    font-size: 1rem;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-light);
+}
+
+.content form,
+.content h3 {
+    width: 80%;
+    margin-bottom: 3em;
+}
+
+.content form {
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content form input {
+    border: none;
+    border-radius: 5px;
+    background: var(--bg-input);
+    padding: 1em 3em;
+    font-size: 0.9em;
+    margin-right: 0.5em;
+}
+
+.content form input::placeholder {
+    color: var(--text-light);
+}
+
+.content form input:focus {
+    border: none;
+    outline: none;
+}
+
+.content form label {
+    display: inline-block;
+    width: 15%;
+    text-align: right;
+    margin-right: 0.5em;
+}
+
+.content form .button-container {
+    margin-top: 1em;
+}
+
+.content form input[name="firstName"],
+.content form input[name="lastname"] {
+    width: 25%;
+}
+
+.content form input[name="year"],
+.content form input[name="month"]{
+    width: 18%;
+}
+
+.content form .date {
+    width: 15%;
+}
+
+.content form select,
+.content form select option {
+    padding: 0.8em 0.5em;
+    border: none;
+    border-radius: 1em;
+    background: var(--bg-dark);
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.9em;
+}
+
+.content form input[name="municipality"],
+.content form input[name="district"],
+.content form input [name="ward"] {
+    width: 25%;
+}
+
+.content form .ward {
+    width: 15%;
+}
+
+.content form input[name="email"] {
+    width: 30%;
+}
+
+.content form input[name="password"] {
+    width: 25%;
+}
+
+
+input[type=number].year::-webkit-inner-spin-button,
+input[type=number].month::-webkit-inner-spin-button,
+input[type=number].date::-webkit-inner-spin-button,
+input[type=number].ward::-webkit-inner-spin-button,
+input[type=number].year::-webkit-outer-spin-button,
+input[type=number].month::-webkit-outer-spin-button,
+input[type=number].date::-webkit-outer-spin-button,
+input[type=number].ward::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.content form select:focus {
+    border: none;
+    outline: none;
+}

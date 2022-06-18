@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="99.189" height="101.718" viewBox="0 0 99.189 101.718">
+  <g id="big_medicine" transform="translate(-14.975 -4.684)">
+    <g id="tablet" transform="translate(12.572 4.684)">
+      <path id="Rectangle_29" data-name="Rectangle 29" d="M21.712,0h0A21.712,21.712,0,0,1,43.424,21.712V49.1a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V21.712A21.712,21.712,0,0,1,21.712,0Z" transform="translate(2.537 0)" fill="#2e4450"/>
+      <path id="Rectangle_30" data-name="Rectangle 30" d="M21.712,0h0A21.712,21.712,0,0,1,43.424,21.712V49.1a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V21.712A21.712,21.712,0,0,1,21.712,0Z" transform="translate(45.826 101.718) rotate(180)" fill="#2e4450"/>
+    </g>
+    <g id="pill" transform="translate(54.907 37.358) rotate(-43)">
+      <path id="Rectangle_31" data-name="Rectangle 31" d="M20.184,0h0A20.184,20.184,0,0,1,40.368,20.184v.807a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v-.807A20.184,20.184,0,0,1,20.184,0Z" transform="translate(0 0)" fill="#2e4450"/>
+      <path id="Rectangle_32" data-name="Rectangle 32" d="M20.184,0h0A20.184,20.184,0,0,1,40.368,20.184v0a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v0A20.184,20.184,0,0,1,20.184,0Z" transform="translate(40.368 43.598) rotate(180)" fill="#2e4450"/>
+    </g>
+  </g>
+</svg>

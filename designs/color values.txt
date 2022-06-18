@@ -1,0 +1,3 @@
+dark green background = #89DEE2
+light green background = #E6FCFB
+black button = #2E4450

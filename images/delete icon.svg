@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="delete_icon" data-name="delete icon" transform="translate(-1107 -10)">
+    <rect id="Rectangle_60" data-name="Rectangle 60" width="50" height="50" rx="5" transform="translate(1107 10)" fill="#2e4450"/>
+    <g id="Rectangle_61" data-name="Rectangle 61" transform="translate(1124 27)" fill="#89dee2" stroke="#89dee2" stroke-width="5">
+      <path d="M0,0H16a0,0,0,0,1,0,0V16a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V0A0,0,0,0,1,0,0Z" stroke="none"/>
+      <rect x="2.5" y="2.5" width="11" height="16" rx="2.5" fill="none"/>
+    </g>
+    <line id="Line_15" data-name="Line 15" x2="22.967" transform="translate(1120.5 27.508)" fill="none" stroke="#89dee2" stroke-width="2"/>
+    <g id="Rectangle_62" data-name="Rectangle 62" transform="translate(1127 23)" fill="#89dee2" stroke="#89dee2" stroke-width="5">
+      <path d="M5,0H5a5,5,0,0,1,5,5V5a0,0,0,0,1,0,0H0A0,0,0,0,1,0,5V5A5,5,0,0,1,5,0Z" stroke="none"/>
+      <rect x="2.5" y="2.5" width="5" fill="none"/>
+    </g>
+    <line id="Line_16" data-name="Line 16" y2="13" transform="translate(1128.5 30.5)" fill="none" stroke="#2e4450" stroke-width="1.5"/>
+    <line id="Line_18" data-name="Line 18" y2="13" transform="translate(1132 30.5)" fill="none" stroke="#2e4450" stroke-width="1.5"/>
+    <line id="Line_17" data-name="Line 17" y2="13" transform="translate(1135.5 30.5)" fill="none" stroke="#2e4450" stroke-width="1.5"/>
+  </g>
+</svg>

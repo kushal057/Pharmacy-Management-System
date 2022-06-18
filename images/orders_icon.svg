@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <g id="orders_and_sales_icon" transform="translate(-190 -1356)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="160" cy="160" r="160" transform="translate(190 1356)" fill="#2e4450"/>
+    <circle id="Ellipse_4" data-name="Ellipse 4" cx="13.5" cy="13.5" r="13.5" transform="translate(333 1416)" fill="#e6fcfb"/>
+    <g id="Rectangle_1" data-name="Rectangle 1" fill="none">
+      <path d="M278,1445a10,10,0,0,1,10-10H405a10,10,0,0,1,10,10v146a10,10,0,0,1-10,10H288a10,10,0,0,1-10-10Z" stroke="none"/>
+      <path d="M 288 1444.999877929688 L 288 1590.999877929688 L 405 1590.999877929688 L 405 1444.999877929688 L 288 1444.999877929688 M 288 1434.999877929688 L 405 1434.999877929688 C 410.5228881835938 1434.999877929688 415 1439.476928710938 415 1444.999877929688 L 415 1590.999877929688 C 415 1596.522827148438 410.5228881835938 1600.999877929688 405 1600.999877929688 L 288 1600.999877929688 C 282.4771118164063 1600.999877929688 278 1596.522827148438 278 1590.999877929688 L 278 1444.999877929688 C 278 1439.476928710938 282.4771118164063 1434.999877929688 288 1434.999877929688 Z" stroke="none" fill="#e6fcfb"/>
+    </g>
+    <line id="Line_3" data-name="Line 3" x2="68" transform="translate(322.34 1554.38)" fill="none" stroke="#e6fcfb" stroke-width="3"/>
+    <line id="Line_4" data-name="Line 4" x2="68" transform="translate(322.34 1516.89)" fill="none" stroke="#e6fcfb" stroke-width="3"/>
+    <line id="Line_5" data-name="Line 5" x2="68" transform="translate(322.34 1479.4)" fill="none" stroke="#e6fcfb" stroke-width="3"/>
+    <line id="Line_6" data-name="Line 6" x2="15" transform="translate(305.7 1479.4)" fill="none" stroke="#e6fcfb" stroke-width="10"/>
+    <line id="Line_7" data-name="Line 7" x2="15" transform="translate(306 1517)" fill="none" stroke="#e6fcfb" stroke-width="10"/>
+    <line id="Line_8" data-name="Line 8" x2="15" transform="translate(305.7 1554.38)" fill="none" stroke="#e6fcfb" stroke-width="10"/>
+    <line id="Line_9" data-name="Line 9" x2="13.49" y2="15.62" transform="translate(350.29 1563.49)" fill="none" stroke="#e6fcfb" stroke-width="10"/>
+    <line id="Line_10" data-name="Line 10" x1="35" y2="23" transform="translate(360.56 1553.62)" fill="none" stroke="#e6fcfb" stroke-width="10"/>
+  </g>
+</svg>

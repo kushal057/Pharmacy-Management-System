@@ -1,0 +1,5 @@
+<svg id="big_invoice" xmlns="http://www.w3.org/2000/svg" width="78.826" height="95.613" viewBox="0 0 78.826 95.613">
+  <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="39.413" cy="36.296" rx="39.413" ry="36.296" transform="translate(0 23.022)" fill="#2e4450"/>
+  <path id="Path_5" data-name="Path 5" d="M563,551.981s21.256,28.828,17.689,50.449,20.217,12.012,20.217,12.012-7.135-55.253,10.7-62.46S563,551.981,563,551.981Z" transform="translate(-549.487 -548.778)" fill="#2e4450"/>
+  <text id="_" data-name="$" transform="translate(39.588 73.98)" fill="#e6fcfb" font-size="45" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="-14.625" y="0">$</tspan></text>
+</svg>

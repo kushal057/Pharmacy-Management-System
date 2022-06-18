@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="daily_customer" transform="translate(0 -11)">
+    <g id="customer_icon" data-name="customer icon" transform="translate(19 27)">
+      <circle id="Ellipse_5" data-name="Ellipse 5" cx="35" cy="35" r="35" transform="translate(-19 -16)" fill="#89dee2"/>
+      <ellipse id="Ellipse_9" data-name="Ellipse 9" cx="7.5" cy="8" rx="7.5" ry="8" transform="translate(8 0)" fill="#2e4450"/>
+      <path id="Rectangle_34" data-name="Rectangle 34" d="M14,0h4A14,14,0,0,1,32,14v0a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v0A14,14,0,0,1,14,0Z" transform="translate(0 18)" fill="#2e4450"/>
+    </g>
+  </g>
+</svg>

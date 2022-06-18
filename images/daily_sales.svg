@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="daily_sales" transform="translate(0 -6.54)">
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="35" cy="35" r="35" transform="translate(0 6.54)" fill="#89dee2"/>
+    <g id="Money_bag_icon" data-name="Money bag icon" transform="translate(18 20.927)">
+      <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="17.5" cy="16.116" rx="17.5" ry="16.116" transform="translate(0 10.222)" fill="#2e4450"/>
+      <path id="Path_5" data-name="Path 5" d="M563,550.2s9.438,12.8,7.854,22.4,8.976,5.333,8.976,5.333-3.168-24.533,4.752-27.733S563,550.2,563,550.2Z" transform="translate(-557 -548.778)" fill="#2e4450"/>
+      <text id="_" data-name="$" transform="translate(18.5 34.518)" fill="#e6fcfb" font-size="26" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="-8.45" y="0">$</tspan></text>
+    </g>
+  </g>
+</svg>

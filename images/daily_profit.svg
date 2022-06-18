@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="daily_profit" transform="translate(0 -12.101)">
+    <circle id="Ellipse_5" data-name="Ellipse 5" cx="35" cy="35" r="35" transform="translate(0 12.101)" fill="#89dee2"/>
+    <rect id="small_bar" data-name="small bar" width="9" height="14" transform="translate(20 49.101)" fill="#2e4450"/>
+    <rect id="middle_bar" data-name="middle bar" width="10" height="21" transform="translate(30 42.101)" fill="#2e4450"/>
+    <rect id="long_bar" data-name="long bar" width="9" height="27" transform="translate(41 36.101)" fill="#2e4450"/>
+    <g id="Arrow_icon" data-name="Arrow icon" transform="translate(39.011 21.587) rotate(60)">
+      <path id="Polygon_1" data-name="Polygon 1" d="M4.792,0,9.584,8.985H0Z" fill="#2e4450"/>
+      <line id="Line_1" data-name="Line 1" y2="20.965" transform="translate(4.792 5.092)" fill="none" stroke="#2e4450" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

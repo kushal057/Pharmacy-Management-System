@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="39.291" viewBox="0 0 33 39.291">
+  <g id="report" transform="translate(1.5 -1.5)">
+    <path id="Path_5" data-name="Path 5" d="M1515.4,1442.933h21.29l8.71,8.71v27.581h-30Z" transform="translate(-1515.4 -1439.933)" fill="none" stroke="#2e4450" stroke-width="3"/>
+    <line id="Line_11" data-name="Line 11" y2="10.269" transform="translate(20.594 4.407)" fill="none" stroke="#2e4450" stroke-width="3"/>
+    <line id="Line_12" data-name="Line 12" x1="11.06" transform="translate(17.717 10.43)" fill="none" stroke="#2e4450" stroke-width="3"/>
+    <path id="Rectangle_3" data-name="Rectangle 3" d="M1540,1499.138c0-.629.307-1.138.686-1.138h12.54c.379,0,.686.51.686,1.138h0c0,.629-.307,1.138-.686,1.138h-12.54c-.379,0-.686-.51-.686-1.138Z" transform="translate(-1532 -1481.941)" fill="#2e4450"/>
+    <path id="Rectangle_4" data-name="Rectangle 4" d="M1540,1528.138c0-.629.307-1.138.686-1.138h12.54c.379,0,.686.51.686,1.138h0c0,.629-.307,1.138-.686,1.138h-12.54c-.379,0-.686-.51-.686-1.138Z" transform="translate(-1532 -1503.831)" fill="#2e4450"/>
+    <path id="Rectangle_5" data-name="Rectangle 5" d="M1540,1557.138c0-.629.307-1.138.686-1.138h12.54c.379,0,.686.51.686,1.138h0c0,.629-.307,1.138-.686,1.138h-12.54c-.379,0-.686-.51-.686-1.138Z" transform="translate(-1532 -1525.721)" fill="#2e4450"/>
+  </g>
+</svg>

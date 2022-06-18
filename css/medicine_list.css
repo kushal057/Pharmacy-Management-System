@@ -1,0 +1,310 @@
+/* Utilities */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --bg-dark: rgb(136, 222, 226);
+    --bg-light: rgb(230, 252, 251);
+    --bg-input: #d3e7e8;
+    --text-dark: #2E4450;
+    --text-light: rgba(46, 68, 80, 0.77);
+    font-family: "Poppins", sans-serif;
+    font-size: calc(0.5vw + 0.5em);
+}
+ 
+body {
+    display: flex;
+    background: var(--bg-light);
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Dashboard */
+
+.dashboard {
+    width: 20%;
+    height: 100vmin;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+}
+
+.dashboard-menus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.dashboard-menus h3 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    text-transform: capitalize;
+    flex: 2.7;
+    text-align: left;
+    padding-left: 5.2vw;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.dashboard-menus a {
+    width: 100%;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: flex-start;
+    font-size: 1rem;
+    flex: 2.5;
+    padding-left: 5.2vw;
+}
+
+.dashboard-menus a .image-container {
+    width: 10%;
+}
+
+.dashboard-menus a img {
+    width: 100%;
+    height: 1.5em;
+}
+
+.dashboard-menus .medicine img {
+    transform: rotate(40deg);
+}
+
+.dashboard-menus a p {
+    width: 40%;
+    margin-left: 1em;
+    font-weight: 500;
+}
+
+.dashboard-menus .active {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1;
+    background: var(--text-dark);
+}
+
+.dashboard-menus .active p {
+    color: var(--bg-light);
+}
+
+.dashboard-account {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 92%;
+    height: 20%;
+}
+
+.dashboard-account img {
+    height: 30%;
+    margin-bottom: 0.2em;
+}
+
+.dashboard-account p {
+    font-weight: 600;
+}
+
+/* Content */
+
+.container {
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 4.2em;
+}
+
+.content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content .medicine-list {
+    width: 82%;
+}
+
+header {
+    height: 7vmin;
+    width: 82%;
+    margin-bottom: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    position: relative;
+}
+
+.left-header .suggestions {
+    top: 3.3em;
+    border-radius: 0.2em;
+    background: #dae7eb;
+    position: absolute;
+    width: 19.8%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-header .suggestions li {
+    width: 100%;
+    padding: 0.7em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-bottom: 1px solid darkgray;
+    font-weight: 400;
+    font-size: 0.95em;
+    flex: 1;
+    text-align: left;
+}
+
+.left-header .suggestions li:last-child {
+    border-bottom: none;
+}
+
+
+.left-header .search-container .searchbar {
+    padding: 0.71em 2em;
+    width: 60%;
+    border-radius: 0.3em;
+    outline: none;
+    border: none;
+    background: #dae7eb;
+    color: #2E4450;
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
+.left-header .search-container .searchbar::placeholder {
+    color: var(--text-light);
+}
+
+.left-header .search-container .searchbar:focus {
+    border: none;
+    background: #dae7eb;
+    outline: none;
+}
+
+.left-header .search-container .searchbar:focus::placeholder {
+    color: transparent;
+}
+
+.left-header .search-container .btn-search {
+    cursor: pointer;
+    background: var(--text-dark);
+    color: var(--bg-light);
+    font-size: 1em;
+    padding: 0.65em 1.2em;
+    border: none;
+    border-radius: 0.3em;
+}
+
+header .right-header a{
+    background: var(--text-dark);
+    border-radius: 2em;
+    padding: 0.6em 1.5em;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--bg-light);
+    text-decoration: none;
+}
+
+.medicine-list #title,
+.medicine-list .row {
+    width: 100%;
+    display: flex;
+    font-size: 0.9em;
+    justify-content: space-between;
+    padding: 0 2.5em;
+    background: var(--bg-dark);
+    border-radius: 0.3em;
+    color: rgba(46, 68, 80, 0.75);
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.medicine-list .row {
+    background: none;
+    border-radius: 0;
+    border-bottom: 0.1px solid lightgray;
+    color: black;
+    font-weight: 400;
+}
+
+
+.medicine-list #title .text,
+.medicine-list .row .text {
+    display: flex;
+    width: 90%;
+    padding: 1.1em 0;
+    text-align: left;
+}
+
+.medicine-list p {
+   /* background: blue;
+   border:2px solid #2E4450; */
+   width: 9em;
+   text-align: left;
+}
+
+.medicine-list p:first-child {
+    flex: 1;
+}
+
+.medicine-list p:nth-child(2) {
+    flex: 0.7;
+}
+
+.medicine-list p:nth-child(5) {
+    flex: 0.6;
+}
+
+.medicine-list p:nth-child(3),
+.medicine-list p:nth-child(4) {
+    flex: 0.9;
+}
+
+
+.medicine-list p:last-child {
+    flex: 0.6;
+    text-align: center;
+}
+
+.medicine-list .buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 0.2em;
+}
+
+.medicine-list button {
+    background: none;
+    border: none;
+}
+
+.medicine-list img {
+    margin-left: 0.6em;
+    width: 2.1em;
+    display: block;
+}
