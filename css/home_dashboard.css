@@ -25,6 +25,31 @@ a {
     text-decoration: none;
 }
 
+button {
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: none;
+    padding: 0.85em 2em;
+    color: white;
+    background: #2E4450;
+    border-radius: 1.5em;
+    border: 2px solid transparent;
+}
+
+button:hover {
+    background: #2e4450a5;
+    cursor: pointer;
+}
+
+button[name=logout] {
+    background: none;
+    color: var(--text-dark);
+}
+
+button[name=logout]:hover {
+    background: none;
+}
+
 /* Dashboard */
 
 .dashboard {
@@ -104,16 +129,28 @@ a {
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    width: 92%;
-    height: 20%;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    outline: none;
+    position: relative;
+    left: 7rem;
+    margin-top: 3rem;
+    background: none;
+}
+
+.dashboard-account:hover {
+    cursor: pointer;
+    left: 7.5rem;
 }
 
 .dashboard-account img {
-    height: 30%;
+    height: 3rem;
     margin-bottom: 0.2em;
 }
 
 .dashboard-account p {
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -151,17 +188,23 @@ a {
     text-align: left;
 }
 
+.left-content h3 {
+    font-size: 1.4rem;
+}
+
 .left-content div img {
-    width: 20%;
+    width: 22%;
+    margin-right: 0.7em;
 }
 
 .left-content div p {
     width: 75%;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .left-content p span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     line-height: 1;
 }
