@@ -27,10 +27,19 @@ if(isset($_POST["btn-delete"])) {
     echo "<script>window.location.href = '#'</script>";
 }
 
-$dbh = new Dbh();
-$result = $dbh->connect()->prepare("SELECT firstname, lastname, phone, email FROM customer WHERE users_id = ?");
-$result->execute(array($_SESSION["users_id"]));
-$row = $result->fetchAll();
+$row;
+if(isset($_POST["btn-search"])) {
+        $dbh = new Dbh();
+        $search = $dbh->connect()->prepare("SELECT * FROM CUSTOMER WHERE users_id = ? AND email LIKE ?");
+        $search->execute(array($_SESSION["users_id"], $_POST["search"] . "%"));
+        $row = $search->fetchAll();
+} else {
+    $dbh = new Dbh();
+    $result = $dbh->connect()->prepare("SELECT firstname, lastname, phone, email FROM customer WHERE users_id = ?");
+    $result->execute(array($_SESSION["users_id"]));
+    $row = $result->fetchAll();
+}
+
 $result = $dbh->connect()->prepare("SELECT username FROM users WHERE users_id = ?");
 $result->execute(array($_SESSION["users_id"]));
 $username = $result->fetch();
@@ -89,19 +98,13 @@ $username = $result->fetch();
         <div class="content">
         <header>
                 <div class="left-header">
-                <form class="search-container">
+                <form class="search-container" action="#" method="post">
                         <input type="text" name="search" placeholder="Customer name" class="searchbar">
-                        <input type="submit" name="btn-search" class="btn-search" value="Search">
+                        <button type="submit" name="btn-search" class="btn-search">Search</button>
                 </form>
-                <!-- <ul class="suggestions">
-                    <li>This</li>
-                    <li>This</li>
-                    <li>This</li>
-                    <li>This</li>
-                </ul> -->
+                <ul class="suggestions"></ul>
                 </div>
                 <div class="right-header">
-                   
                     <a href="customer_dashboard.php">Add New Customer</a>
                 </div>
             </header>
@@ -115,6 +118,13 @@ $username = $result->fetch();
                     </div>
                 </div>
                 <?php 
+                    if(sizeof($row) <= 0) {
+                        echo "<div class='row'>";
+                           echo "<div class='text'>";
+                              echo "<p>No items found</p>";
+                           echo "</div>";   
+                        echo "</div>";
+                    }
                     forEach($row as $i) {
                         echo "<div class='row'>";
                         echo "<div class='text'>";
@@ -138,47 +148,6 @@ $username = $result->fetch();
                     ?>
         </div>
     </div>
-
-    <script>
-        const searchbar = document.querySelector(".searchbar");
-        const suggestions = document.querySelector(".suggestions");
-        const list = document.querySelectorAll("li");
-        function retrieve(e) {
-           let search = e.target.value;
-           console.log(search);
-           let xmlhttp = new XMLHttpRequest();
-           xmlhttp.addEventListener("readyStateChange", () => {
-               if(this.readyState == 4 && this.status == 200) {
-                   let myObj = JSON.parse(this.responseText);
-                   console.log(myObj);
-               }
-           });
-           xmlhttp.open("POST","customer_list.php?q=" + search, true);
-           xmlhttp.send();
-        }
-        searchbar.addEventListener("keyup",retrieve)
-
-        // Logout
-        const accountDiv = document.querySelector(".dashboard-account");
-        const accountImage = document.querySelector(".dashboard-account img");
-        const accountName = document.querySelector(".dashboard-account p");
-        const originalName = accountName.textContent;
-
-        function hovered() {
-            accountImage.src = "images/logout_icon.svg";
-            accountName.textContent = "logout";
-            accountName.style.color = "#FF2E2E"
-        }
-
-        function unhovered() {
-            accountImage.src = "images/user.svg";
-            accountName.textContent = originalName;
-            accountName.style.color = "var(--text-dark)";
-        }
-
-        accountDiv.addEventListener("mouseover", hovered);
-        accountDiv.addEventListener("mouseout", unhovered);
-    </script>
 
 </body>
 

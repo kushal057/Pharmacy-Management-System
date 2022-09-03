@@ -1,3 +1,15 @@
+<?php
+
+// if(isset($_POST["btn-send"])) {
+//     $to = "tiwarikushal057@gmail.com";
+//     $subject = $_POST["subject"];
+//     $from = $_POST["name"];
+//     $headers = "From: " . $from;
+//     $message = $_POST["message"];
+//     mail($to,$subject,$message,$headers);
+// }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,22 +78,22 @@
         </div>
     </section>
 
-    <div class="footer">
+    <!-- <form class="footer" action="#" method="post">
         <h3>LEAVE A MESSAGE</h3>
         <div class="name">
             <p>Name</p>
             <input type="text" name="name">
         </div>
         <div class="email">
-            <p>Email</p>
-            <input type="email" name="email">
+            <p>Subject</p>
+            <input type="subject" name="subject">
         </div>
         <div class="message">
             <p>Message</p>
             <textarea name="message"></textarea>
         </div>
-        <button class="btn-send">SEND</button>
-    </div>
+        <button name="btn-send" class="btn-send">SEND</button>
+    </form> -->
 
     <div class="copyright">© Copyright 2022 Pharmacy Management System. All Rights Reserved</div>
 

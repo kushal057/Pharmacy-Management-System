@@ -29,10 +29,19 @@ if(isset($_POST["btn-delete"])) {
 
 
 
-$dbh = new Dbh();
-$res = $dbh->connect()->prepare("SELECT * FROM invoice WHERE users_id = ?");
-$res->execute(array($_SESSION["users_id"]));
-$row = $res->fetchAll();
+$row;
+if(isset($_POST["btn-search"])) {
+        $dbh = new Dbh();
+        $search = $dbh->connect()->prepare("SELECT * FROM invoice WHERE users_id = ? AND customer_name LIKE ?");
+        $search->execute(array($_SESSION["users_id"], $_POST["search"] . "%"));
+        $row = $search->fetchAll();
+} else {
+    $dbh = new Dbh();
+    $result = $dbh->connect()->prepare("SELECT * FROM invoice WHERE users_id = ?");
+    $result->execute(array($_SESSION["users_id"]));
+    $row = $result->fetchAll();
+}
+
 $result = $dbh->connect()->prepare("SELECT username FROM users WHERE users_id = ?");
 $result->execute(array($_SESSION["users_id"]));
 $username = $result->fetch();
@@ -91,7 +100,7 @@ $username = $result->fetch();
         <div class="content">
         <header>
                 <div class="left-header">
-                <form class="search-container">
+                <form class="search-container" action="#" method="post">
                         <input type="text" name="search" placeholder="Customer Name" class="searchbar">
                         <input type="submit" name="btn-search" class="btn-search" value="Search">
                 </form>
@@ -114,6 +123,13 @@ $username = $result->fetch();
                     </div>
                 </div>
                 <?php 
+                if(sizeof($row) <= 0) {
+                    echo "<div class='row'>";
+                       echo "<div class='text'>";
+                          echo "<p>No items found</p>";
+                       echo "</div>";   
+                    echo "</div>";
+                }
                 forEach($row as $i) {
                     $_SESSION["customer_name"] = $i['customer_name'];
                     $_SESSION["medicine_name"] = $i["medicine_name"];

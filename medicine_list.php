@@ -27,13 +27,20 @@ if(isset($_POST["btn-delete"])) {
     echo "<script>window.location.href = '#'</script>";
 }
 
+$row;
+if(isset($_POST["btn-search"])) {
+        $dbh = new Dbh();
+        $search = $dbh->connect()->prepare("SELECT * FROM medicine WHERE users_id = ? AND medicine_name LIKE ?");
+        $search->execute(array($_SESSION["users_id"], $_POST["search"] . "%"));
+        $row = $search->fetchAll();
+} else {
+    $dbh = new Dbh();
+    $res = $dbh->connect()->prepare("SELECT medicine_name, medicine_type, year, month, date, marked_price, cost_price, quantity FROM medicine WHERE users_id = ?");
+    $res->execute(array($_SESSION["users_id"]));
+    $row = $res->fetchAll();
+}
 
 
-$dbh = new Dbh();
-$res = $dbh->connect()->prepare("SELECT medicine_name, medicine_type, year, month, date, marked_price, cost_price, quantity FROM medicine WHERE users_id = ?");
-$res->execute(array($_SESSION["users_id"]));
-echo "<br>";
-$row = $res->fetchAll();
 $result = $dbh->connect()->prepare("SELECT username FROM users WHERE users_id = ?");
 $result->execute(array($_SESSION["users_id"]));
 $username = $result->fetch();
@@ -92,7 +99,7 @@ $username = $result->fetch();
         <div class="content">
         <header>
                 <div class="left-header">
-                <form class="search-container">
+                <form class="search-container" action="#" method="post">
                         <input type="text" name="search" placeholder="Medicine name" class="searchbar">
                         <input type="submit" name="btn-search" class="btn-search" value="Search">
                 </form>
@@ -115,6 +122,13 @@ $username = $result->fetch();
                     </div>
                 </div>
                 <?php 
+                if(sizeof($row) <= 0) {
+                    echo "<div class='row'>";
+                       echo "<div class='text'>";
+                          echo "<p>No items found</p>";
+                       echo "</div>";   
+                    echo "</div>";
+                }
                 forEach($row as $i) {
                     echo "<div class='row'>";
                     echo "<div class='text'>";
@@ -139,67 +153,6 @@ $username = $result->fetch();
                 }?>
         </div>
     </div>
-
-    <script>
-        const searchbar = document.querySelector(".searchbar");
-        const suggestions = document.querySelector(".suggestions");
-        
-        function retrieve(e) {
-            suggestions.style.display = "flex"
-           let search = e.target.value;
-           fetch("autocomplete.php", {
-               method: "POST",
-               headers: {
-                   "Content-Type": "application/json"
-               },
-               body: JSON.stringify({
-                   input: search
-               }) 
-           }).then(res=> {
-               return res.json();
-           }).then(data => {
-               console.log(data);
-                for(let value of data) {
-                    while(suggestions.firstChild) {
-                        suggestions.removeChild(suggestions.lastChild);
-                    }
-                    const list = document.createElement("li");
-                    list.textContent = value["medicine_name"];
-                    suggestions.appendChild(list);
-                    list.addEventListener("click", (e)=>{
-                        searchbar.value = value["medicine_name"];
-                        suggestions.style.display = "none";
-                    })
-                }
-           }).catch(error => console.log("error" + error));
-        }
-        searchbar.addEventListener("keyup",retrieve)
-        searchbar.addEventListener("focusout",()=>{
-            suggestions.style.display = "none";
-            e.target.value = "";
-        })
-
-        // Logout
-        const accountDiv = document.querySelector(".dashboard-account");
-        const accountImage = document.querySelector(".dashboard-account img");
-        const accountName = document.querySelector(".dashboard-account p");
-        const originalName = accountName.textContent;
-
-        function hovered() {
-            accountImage.src = "images/logout_icon.svg";
-            accountName.textContent = "logout";
-            accountName.style.color = "#FF2E2E"
-        }
-
-        function unhovered() {
-            accountImage.src = "images/user.svg";
-            accountName.textContent = originalName;
-            accountName.style.color = "var(--text-dark)";
-        }
-
-        accountDiv.addEventListener("mouseover", hovered);
-        accountDiv.addEventListener("mouseout", unhovered);
-    </script>
 
 </body>
 
